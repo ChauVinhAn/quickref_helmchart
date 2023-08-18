@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quickref-deployment
+  labels:
+    app: quickref
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quickref
+  template:
+    metadata:
+      labels:
+        app: quickref
+    spec:
+      containers:
+        - name: quickref
+          image: chauvinhan/quickref
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "150m"

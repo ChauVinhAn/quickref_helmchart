@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: quickref-deployment-$RUN_NUMBER
+  name: quickref-deployment-8
   labels:
     app: quickref
 spec:
